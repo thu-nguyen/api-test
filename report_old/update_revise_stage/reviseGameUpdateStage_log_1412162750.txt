@@ -1,0 +1,11 @@
+
+
+
+-----------------Result---------------------
+Action:                  reviseGameUpdateStage
+Concurrency requests:    10
+Complete requests:       100
+Failed requests:         0
+Time taken for tests:    2.266 seconds (00:00:02)
+Requests per second:     44.13 requests
+Time per request:        0.023 seconds

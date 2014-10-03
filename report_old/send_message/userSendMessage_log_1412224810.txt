@@ -1,0 +1,11 @@
+
+
+
+-----------------Result---------------------
+Action:                  userSendMessage
+Concurrency requests:    10
+Complete requests:       10
+Failed requests:         0
+Time taken for tests:    2.991 seconds (00:00:02)
+Requests per second:     3.34 requests
+Time per request:        0.299 seconds

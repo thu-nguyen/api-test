@@ -1,0 +1,11 @@
+
+
+
+-----------------Result---------------------
+Action:                  mainGameFlashcardUnlocked
+Concurrency requests:    10
+Complete requests:       1000
+Failed requests:         0
+Time taken for tests:    20.916 seconds (00:00:20)
+Requests per second:     0.02 requests
+Time per request:        47.811 seconds

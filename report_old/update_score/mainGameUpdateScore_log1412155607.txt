@@ -1,0 +1,44 @@
+
+
+
+-----------------Result---------------------
+Action:                  mainGameUpdateScore
+Concurrency requests:    10
+Complete requests:       10000
+Failed requests:         0
+Time taken for tests:    4342.23 seconds (01:12:22)
+Requests per second:     2.3 requests
+Time per request:        0.434 seconds
+
+
+
+-----------------Result---------------------
+Action:                  mainGameUpdateScore
+Concurrency requests:    10
+Complete requests:       10000
+Failed requests:         0
+Time taken for tests:    4342.52 seconds (01:12:22)
+Requests per second:     2.3 requests
+Time per request:        0.434 seconds
+
+
+
+-----------------Result---------------------
+Action:                  mainGameUpdateScore
+Concurrency requests:    10
+Complete requests:       10000
+Failed requests:         0
+Time taken for tests:    4342.796 seconds (01:12:22)
+Requests per second:     2.3 requests
+Time per request:        0.434 seconds
+
+
+
+-----------------Result---------------------
+Action:                  mainGameUpdateScore
+Concurrency requests:    10
+Complete requests:       10000
+Failed requests:         0
+Time taken for tests:    4342.99 seconds (01:12:22)
+Requests per second:     2.3 requests
+Time per request:        0.434 seconds
