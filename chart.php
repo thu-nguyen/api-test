@@ -33,10 +33,11 @@ $reportFiles = array(
   )
 );
 $action     = (isset($_GET['action'])) ? $_GET['action'] : UPDATE_SCORE;
+$folder     = (isset($_GET['folder'])) ? $_GET['folder'] : REPORT_PATH;
 $files      = $reportFiles[$action];
-$dataLevel1 = readResult($files['level1']);
+$dataLevel1 = readResult($folder . '/' .$files['level1']);
 $level1     = chartData($dataLevel1);
-$level0     = chartData(readResult($files['level0']));
+$level0     = chartData(readResult($folder . '/' . $files['level0']));
 $overview   = getOverviewData($dataLevel1);
 
 ?>
@@ -109,7 +110,7 @@ $overview   = getOverviewData($dataLevel1);
   		<h2>Actions</h2>
   		<ul>
   			<?php foreach ($reportFiles as $action => $file) { ?>  			
-  			<li><a href="?action=<?=$action?>"><?=$action?></a></li>
+  			<li><a href="?action=<?=$action?>&folder=<?=$folder?>"><?=$action?></a></li>
   			<?php }?>
   		</ul>
   	</div>

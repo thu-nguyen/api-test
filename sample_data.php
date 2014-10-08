@@ -7,26 +7,11 @@ include_once ("db.php");
 // generateChapter(50);
 // 1000000 users
 // generateUser(10000);
-writeFacebookIds();
-$flashcardTables = array(
-	// 'flashcard',
-	// 'flashcard_image',
-	// 'flashcard_sentence',
-	// 'flashcard_sentence_sound',
-	// 'flashcard_term',
-	// 'flashcard_term_sound',
-	// 'user',
-	// 'user_flashcard_term',
-	// 'user_group',
-	'user_friend'
+// writeFacebookIds();
+$flashcardTables = array(	
+	'user_flashcard_term',	
 );
 $petzzleTables = array(
-	// 'chapter',
-	// 'level',
-	// 'level_map',
-	// 'level_term',
-	// 'package',
-	// 'package_flashcard',
 	'revise_chapter_play',
 	'revise_stage',
 	'revise_term_play',
@@ -35,8 +20,7 @@ $petzzleTables = array(
 	'user_invite_friend',
 	'user_message',
 	'user_score',
-	'user_send_life',
-	'user_social_account',
+	'user_send_life',	
 	'user_state'
 );
 $vocabTables = array(
@@ -51,8 +35,8 @@ $vocabTables = array(
 	'wordlist_stage',
 	'word_play'
 );
-// truncateTables($petzzleTables, DB_PETZZLE);
-// truncateTables($flashcardTables, DB_FLASHCARD);
-// truncateTables($vocabTables, DB_VOCAB);
+truncateTables($petzzleTables, DB_PETZZLE);
+truncateTables($flashcardTables, DB_FLASHCARD);
+truncateTables($vocabTables, DB_VOCAB);
 // generateWordlist(10);
 // generateUserFriend(1000);

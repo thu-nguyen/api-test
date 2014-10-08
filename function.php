@@ -1,18 +1,18 @@
 <?php
-const API_URL              =  "http://petzzle.api";
-const CONCURRENCY          =  10;
-const REPORT_PATH          =  'report/';
-const LOCK_PATH            =  'lock/';
-const UPDATE_SCORE         =  'update_score';
-const UNLOCKED_FLASHCARD   =  'unlocked_flashcard';
-const COLLECTED_FLASHCARD  =  'collected_flashcard';
-const UPDATE_COIN          =  'update_coin';
-const SEND_MESSAGE         =  'send_message';
-const UPDATE_REVISE_STAGE  =  'update_revise_stage';
+const API_URL                 =  "http://petzzle.api";
+const CONCURRENCY             =  1;
+const REPORT_PATH             =  'report/';
+const LOCK_PATH               =  'lock/';
+const UPDATE_SCORE            =  'update_score';
+const UNLOCKED_FLASHCARD      =  'unlocked_flashcard';
+const COLLECTED_FLASHCARD     =  'collected_flashcard';
+const UPDATE_COIN             =  'update_coin';
+const SEND_MESSAGE            =  'send_message';
+const UPDATE_REVISE_STAGE     =  'update_revise_stage';
 
-const TOTAL_USER           =  1000000;
-const TOTAL_SUB_REQUEST    =  100;
-const NUMBER_USER_PER_REQUEST = 10;
+const TOTAL_USER              =  1000000;
+const TOTAL_SUB_REQUEST       =  100;
+const NUMBER_USER_PER_REQUEST =  1000;
 
 function multiRequest($data, $options = array(), &$numberOfFailedRequest) {
  
@@ -114,7 +114,7 @@ function writeResult($folder, $fileName, $start, $end, $totalRequests, $numberOf
 }
 
 function readResult($filePath){  
-  $reports = file_get_contents(REPORT_PATH . $filePath);
+  $reports = file_get_contents($filePath);
   $reports = explode("\n", $reports);  
   $data    = array();
   foreach ($reports as $row) {
@@ -148,19 +148,18 @@ function chartData($data){
   return $chart;
 }
 function getUserIdFromLockFile($filePath, $totalUsers, $numberUsers){
-  $startUserId       = 1;  
+  $startUserId       = 1;
   $handle = fopen($filePath,"a+");
   //Lock File, error if unable to lock
   if(flock($handle, LOCK_EX)) {
       $content = @fread($handle, filesize($filePath));
-      $content = explode("\n", $content);
+      $content = explode("\n", $content);      
       $maxUserId = $content[count($content) - 1];
       if ($maxUserId){
         $startUserId = $maxUserId + $numberUsers;
       }
-      if ($startUserId > $totalUsers) $startUserId = 1;
-      
-      rewind($handle);           //Set write pointer to beginning of file
+      if ($startUserId > $totalUsers) $startUserId = 1;      
+      rewind($handle);           //Set write pointer to beginning of file            
       fwrite($handle, "\n$startUserId");
       flock($handle, LOCK_UN);    //Unlock File
   } else {

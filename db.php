@@ -5,6 +5,7 @@ const DB_PASSWORD      =    "password";
 const DB_PETZZLE       =    "petzzle_test";
 const DB_FLASHCARD     =    "flashcard_test";
 const DB_VOCAB         =    "vocab_test";
+const DATA_PATH        =    "data/";
 
 function generateUser($number){	
 	echo "inserting user...\n";
@@ -420,7 +421,7 @@ function writeFacebookIds(){
 	    if(! $result) {
 	        die('Could not get data: ' . mysql_error());
 	    }
-	    $fileName = "data/facebookId_{$i}.txt";
+	    $fileName = DATA_PATH . "facebookId_{$i}.txt";
 	    $content = "";
 	    while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
 	    	$content .=  $row['identity'] ."\n";

@@ -17,7 +17,6 @@ echo "update revise stage is running\n";
 echo "user_id from $startUserId to $endUserId \n";
 echo "start requesting ..\n";
 
-
 $start = microtime(true);
 
 for($userId = $startUserId; $userId < $endUserId; $userId++){	
@@ -47,4 +46,4 @@ $end = microtime(true);
 $totalRequests = $numberUsers * $totalFlashcards;
 showReport(UPDATE_REVISE_STAGE, 'reviseGameUpdateStage', $start, $end, $totalRequests, $numberConcurrency, $totalFailedRequest);
 writeResult(UPDATE_REVISE_STAGE,'user', $start, $end, $totalRequests, $numberConcurrency, $totalFailedRequest);
-print_r($result);
+// print_r($result);

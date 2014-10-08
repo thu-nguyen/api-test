@@ -12,7 +12,7 @@ $endUserId            =  $startUserId + $numberUsers;
 $action               =  '[{"action":"userSendMessage","provider":"%s","identity":"%s","key":"%s","user_id":"%d"}]';
 
 $messages             = array('Petzzle_Request_Life', 'Petzzle_Send_Life','Petzzle_Invite_Friend');
-$facebookFile         = "data/facebookId_". rand(1,10) . ".txt";
+$facebookFile         = DATA_PATH . "facebookId_". rand(1,10) . ".txt";
 $facebookIds          = getFacebookIdsFromFile($facebookFile);
 
 $result               =  array();
